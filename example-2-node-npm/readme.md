@@ -4,7 +4,13 @@ Tässä esimerkissä tutustumme [Node.js](https://nodejs.org/en/)- ajoympärist�
 
 ## Node.js
 
-Node.js, tunnetummin pelkkä Node on palvelinkäyttöön tarkoitettu JavaScript-ympäristö. Node mahdollistaa JS-koodin suorittamisen ilman selainta.
+Node.js, tunnetummin pelkkä Node on vuonna 2009 julkaistu palvelinkäyttöön tarkoitettu JavaScript-ympäristö. Node mahdollistaa JS-koodin suorittamisen ilman selainta.
+
+### Asennus
+
+Noden asennukseen vaadittavat tiedostot ja tarkat asennusohjeet löytyvät sivustolta [nodejs.org](https://nodejs.org/en/).
+
+> Tulevien esimerkkien tutkiminen ja testailu omalla kotikoneella vaatii Node.js-asennuksen.
 
 ## NPM
 
@@ -17,7 +23,7 @@ NPM-paketin asentaminen onnistuu seuraavalla komennolla:
 
 Asennetut kirjastot löytyvät projektin juurihakemistosta _node-modules_- kansiosta.
 
-> node-modules-kansion sisältöä ei tule seurata Gitissä, sen suuren koon takia.
+> node-modules-kansion sisältöä ei tule seurata Gitissä, sen suuren koon takia. Tiedostojen ja kansioiden seuranta Gitissä estetään .gitignore-tiedostolla.
 
 Jos NPM-projekti ladataan muualta kuten GitHubista, voi paketit ladata yksinkertaisesti seuraavalla komennolla: `npm install`. Komento tarkistaa package.json-tiedostossa määritetyt riippuvuudet, ja asentaa tarvittavat paketit.
 
