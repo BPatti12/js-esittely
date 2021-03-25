@@ -1,0 +1,11 @@
+{
+  "name": "example-2-node-npm",
+  "version": "1.0.0",
+  "description": "Node / npm -esittely",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
