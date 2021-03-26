@@ -9,12 +9,14 @@ Tässä esimerkissä näytetään, kuinka Expressiä voidaan käyttää esimerkk
 ## Käyttöönotto
 Asentamisen jälkeen Express täytyy tuoda ohjelmaan ```require("express")``` funktiolla. Seuraavaksi Expressin pääfunktiosta luodaan app-niminen muuttuja, jonka kautta Expressiä käytetään.
 
+Lopuksi palvelin laitetaan "kuuntelemaan" jotain tiettyä porttia. Express vastaa kaikesta tässä portissa kulkevasta liikenteestä. Portti määritetään app.listen- funktion ensimmäisellä argumentilla.
+
 Tässä Express- palvelimen käyttöönottoon vaadittu koodi
 ```js
 const express = require("express");
 
 const app = express();
-const port = 3000;
+const port = 4000;
 
 // Ohjelmakoodi...
 
