@@ -8,7 +8,7 @@ Electron, on JavaScript kirjasto joka mahdollistaa työpöytäsovellusten kehitt
 
 Electronin avulla verkkosovellus voidaan muuttaa asennettavaksi työpöytä sovellukseksi.
 
-### Asennus {#asennus}
+### Asennus
 
 Electron asennetaan käyttäen [NPM](https://www.npmjs.com/) paketinhallintajärjestelmä.
 
