@@ -26,8 +26,3 @@ Asennetut kirjastot löytyvät projektin juurihakemistosta _node-modules_- kansi
 > node-modules-kansion sisältöä ei tule seurata Gitissä, sen suuren koon takia. Tiedostojen ja kansioiden seuranta Gitissä estetään .gitignore-tiedostolla.
 
 Jos NPM-projekti ladataan muualta kuten GitHubista, voi paketit ladata yksinkertaisesti seuraavalla komennolla: `npm install`. Komento tarkistaa package.json-tiedostossa määritetyt riippuvuudet, ja asentaa tarvittavat paketit.
-<<<<<<< HEAD
-=======
-
-<p style="text-align: center;"> &copy Leevi Laukka 2021 </p>
->>>>>>> 7d2d7f4bd843c635c749c5f44b07ae6de88e342f
