@@ -1,6 +1,6 @@
 # Esimerkki 4 - React.js
 
-React.js tai vain React on Facebookin kehittämä ja ylläpitämä kirjasto. React on luotu helpottamaan verkkosovelluskehitystä.
+[React.js](https://reactjs.org) tai vain React on Facebookin kehittämä ja ylläpitämä kirjasto. React on luotu helpottamaan verkkosovelluskehitystä.
 
 React hallitsee selainikkunan päivittämistä ja elementtien piirtämistä, helpottaen monimutkaisen interaktiivisuuden koodaamista.
 
@@ -30,7 +30,7 @@ Komponentit voidaan jakaa kolmeen eri tyyppiin:
 
 ---
 
-### [Luokkakomponentit (Class Component)](https://reactjs.org/docs/react-component.html)
+### [Luokkakomponentti (Class Component)](https://reactjs.org/docs/react-component.html)
 
 Komponentti luodaan luokkaobjektina, joka perii Reactin sisäänrakennetun Component-luokkan.
 
@@ -51,9 +51,9 @@ export default class App extends Component {
 
 ---
 
-### [Funktiokomponentit (Function Component)](https://reactjs.org/docs/components-and-props.html)
+### [Funktiokomponentti (Function Component)](https://reactjs.org/docs/components-and-props.html)
 
-Funktiokomponentit eroavat luokkakomponenteista monella tapaa (joista lisää vähän [myöhemmin](#hookit)), ja ne ovat aloittelijalle helpompia ymmärtää.
+Funktiokomponentit eroavat luokkakomponenteista monella tapaa (joista lisää vähän [myöhemmin](#hooks)), ja ne ovat aloittelijalle helpompia ymmärtää.
 
 Komponentti viedään funktiona, joka palauttaa piirrettävät elementit.
 
@@ -71,7 +71,7 @@ export default function App() {
 
 ---
 
-### Nuolifunktiokomponentit (Arrow Function Component)
+### Nuolifunktiokomponentti (Arrow Function Component)
 
 Muuten sama kuin normaali funktiokomponentti, mutta alustustapa käyttää uutta ES6-nuolifunktiosyntaksia.
 
@@ -95,9 +95,9 @@ Komponentin tila eli state on kunkin komponentin itse säilömä arvo, jonka avu
 
 ---
 
-## Hooks {#hookit}
+## Hooks
 
-Suurin ero luokka- ja funktiokomponettien välillä on funktiokomponenttien tukemat hookit, eli funktiot, jotka tarjoavat pääsyn stateen ja muihin Reactin ominaisuuksiin ilman tarvetta luokille. Hookit on tehty täyttämään luokkakomponenttien metodien toiminnallisuus funktiokomponenteissa.
+Suurin ero ja funktiokomponettien välillä on funktiokomponenttien tukemat hookit, eli funktiot, jotka tarjoavat pääsyn stateen ja muihin Reactin ominaisuuksiin ilman tarvetta luokille. Hookit on tehty täyttämään luokkakomponenttien metodien toiminnallisuus funktiokomponenteissa.
 
 ---
 
@@ -131,7 +131,7 @@ class Count extends React.Component {
 }
 ```
 
-Seuraavaksi sama komponentti nuolifunktiomuodossa, hookkeja hyödyntäen :
+Seuraavaksi sama komponentti nuolifunktiomuodossa, hookkeja hyödyntäen:
 
 ```js
 const Count = () => {
@@ -146,3 +146,37 @@ const Count = () => {
     );
 };
 ```
+---
+## Props
+Komponenteille vietyjä muuttujia kutsutaan propseiksi. Propseilla voi muuttaa saman komponentin dataa "ulkoa päin". 
+
+Nuolifunktiokomponenteissa propsit saadaan funktion argumenteista seuraavasti: 
+```js
+const Welcome = (props) => {
+    <h1>Hei {props.name}!</h1>
+}
+```
+
+Luokkakomponenteissa propseihin pääsee käsiksi this-muuttujan kautta:
+
+```js  
+class Welcome extends React.Component {
+  render() {
+    return <h1>Hei, {this.props.name}!</h1>;
+  }
+}
+```
+Komponenttiin viedään propseja määrittämällä arvot komponentin parametreiksi: 
+
+```js
+    <Welcome name="Leevi" />
+    // Tämä tulostaa H1-otsikon tekstillä "Hei Leevi!"
+```
+
+Komponentit päivittyvät propsien päivittyessä.
+
+Laskuri-esimerkissä laskurin state ja sen asettamisfunkiot annetaan CounterButtons-komponentille propsien kautta, jotta painikkeet voisivat muuttaa Counter-komponentin statea. 
+
+## Muuta
+## React Native
+React Native on Reactin pohjalta luotu kehys mobiilisovelluskehitystä varten.
