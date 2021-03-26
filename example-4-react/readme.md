@@ -131,7 +131,7 @@ class Count extends React.Component {
 }
 ```
 
-Seuraavaksi sama komponentti nuolifunktiomuodossa, hookkeja hyödyntäen:
+Seuraavaksi sama komponentti nuolifunktiomuodossa, hookkeja hyödyntäen :
 
 ```js
 const Count = () => {
