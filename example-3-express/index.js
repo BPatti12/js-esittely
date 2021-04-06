@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 
 const app = express();
 const port = 4000;
@@ -6,6 +7,7 @@ const port = 4000;
 app.use(express.json());
 // Staattisten sivujen jakelu / middleware
 app.use(express.static("static"));
+app.use(cors());
 
 // GET-pyyntö
 app.get("/api", (req, res) => {

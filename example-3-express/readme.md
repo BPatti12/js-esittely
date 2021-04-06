@@ -2,24 +2,26 @@
 
 Express.js NPM-kirjasto mahdollistaa verkkopalvelimien helpon luomisen Node-ympäristössä.
 
-Express asennetaan komennolla: ```npm install express```.
+Express asennetaan komennolla: `npm install express`.
 
 Tässä esimerkissä näytetään, kuinka Expressiä voidaan käyttää esimerkkisivun jakamiseen palvelimelta, ja kuinka sillä voi luoda API-rajapintoja.
 
 ## Käyttöönotto
-Asentamisen jälkeen Express täytyy tuoda ohjelmaan ```require("express")``` funktiolla. Seuraavaksi Expressin pääfunktiosta luodaan app-niminen muuttuja, jonka kautta Expressiä käytetään.
+Asentamisen jälkeen Express täytyy tuoda ohjelmaan `require("express")` funktiolla. Seuraavaksi Expressin pääfunktiosta luodaan app-niminen muuttuja, jonka kautta Expressiä käytetään.
 
 Lopuksi palvelin laitetaan "kuuntelemaan" jotain tiettyä porttia. Express vastaa kaikesta tässä portissa kulkevasta liikenteestä. Portti määritetään app.listen- funktion ensimmäisellä argumentilla.
 
 Tässä Express- palvelimen käyttöönottoon vaadittu koodi
+
 ```js
 const express = require("express");
 
 const app = express();
+
+// Portti, jota ohjelma kuuntelee
 const port = 4000;
 
 // Ohjelmakoodi...
-
 app.listen(port, () => {
     /* 
     Tämä kohta on täysin valinnainen, 
@@ -28,6 +30,8 @@ app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
 });
 ```
+
+Palvelin käynnistetään `npm start` komennolla.
 
 ## API-rajapinnoista
 API eli Application Programming Interface eli ohjelmistorajapinnat ovat palvelimella sijaitsevia ohjelmia, jotka kuuntelevat ja vastaavat käyttäjäsovellusten (client) lähettämiin pyyntöihin.
@@ -66,6 +70,7 @@ Esimerkki POST-"kuuntelijasta":
 app.post("/api", (req, res) => {
     const { message } = req.body;
 
+    // Jos viestiä ei annettu, palauta virheilmoitus
     if (!message) {
         return res.json({
             error: "Et antanut viestiä!",
@@ -84,7 +89,7 @@ Esimerkki palvelimelle lähetettävästä POST-pyynnöstä ja vastauksesta:
 // Pyynnön lisädata eli payload
 
 {
-    "message":"Terve Express-palvelin!" 
+    "message": "Terve Express-palvelin!"
 }
 
 // Vastaus

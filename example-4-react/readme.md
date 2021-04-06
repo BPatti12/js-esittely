@@ -50,7 +50,6 @@ export default class App extends Component {
 ```
 
 ---
-
 ### [Funktiokomponentti (Function Component)](https://reactjs.org/docs/components-and-props.html)
 
 Funktiokomponentit eroavat luokkakomponenteista monella tapaa (joista lisää vähän [myöhemmin](#hooks)), ja ne ovat aloittelijalle helpompia ymmärtää.
@@ -70,7 +69,6 @@ export default function App() {
 ```
 
 ---
-
 ### Nuolifunktiokomponentti (Arrow Function Component)
 
 Muuten sama kuin normaali funktiokomponentti, mutta alustustapa käyttää uutta ES6-nuolifunktiosyntaksia.
@@ -177,6 +175,15 @@ Komponentit päivittyvät propsien päivittyessä.
 
 Laskuri-esimerkissä laskurin state ja sen asettamisfunkiot annetaan CounterButtons-komponentille propsien kautta, jotta painikkeet voisivat muuttaa Counter-komponentin statea. 
 
+---
+## Reactsivusto verkkoon
+Reactilla tehty sivu täytyy kompiloida normaaliksi HTML- ja JavaScript-koodiksi ennen kun sen saa julkisesti verkkoon.
+
+Kompilointi onnistuu `npm start build` tai `yarn build` komennoilla. 
+
+Komento luo projektin juurihakemistoon build-kansion, jonka sisältö on valmis staatinen verkkosivu, joka voidaan siirtää verkkopalvelimelle ja jakaa sieltä.
+
+---
 ## Muuta
 ## React Native
-React Native on Reactin pohjalta luotu kehys mobiilisovelluskehitystä varten.
+React Native on Reactin pohjalta luotu kehys mobiilisovelluskehitystä varten. 
