@@ -23,16 +23,9 @@ export const APIMessage = () => {
     };
 
     return (
-        <div>
+        <div className="messageForm">
             <form>
-                <textarea
-                    onChange={handleInput}
-                    name="req"
-                    id=""
-                    cols="30"
-                    rows="10"
-                    placeholder="Kirjoita viestisi tähän.."
-                />
+                <textarea onChange={handleInput} name="req" id="" cols="70" rows="6" placeholder="Kirjoita viestisi tähän.." />
                 <button className="button" type="submit" onClick={handleSubmit}>
                     Lähetä
                 </button>
@@ -40,8 +33,7 @@ export const APIMessage = () => {
             {response.message && (
                 <div>
                     <p>
-                        Viestisi oli: "{response.message}" ja se sisältää{" "}
-                        {response.info.charCount} kirjainta.
+                        Viestisi oli: "{response.message}" ja se sisältää {response.info.charCount} kirjainta.
                     </p>
                 </div>
             )}

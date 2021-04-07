@@ -7,6 +7,7 @@ Express asennetaan komennolla: `npm install express`.
 Tässä esimerkissä näytetään, kuinka Expressiä voidaan käyttää esimerkkisivun jakamiseen palvelimelta, ja kuinka sillä voi luoda API-rajapintoja.
 
 ## Käyttöönotto
+
 Asentamisen jälkeen Express täytyy tuoda ohjelmaan `require("express")` funktiolla. Seuraavaksi Expressin pääfunktiosta luodaan app-niminen muuttuja, jonka kautta Expressiä käytetään.
 
 Lopuksi palvelin laitetaan "kuuntelemaan" jotain tiettyä porttia. Express vastaa kaikesta tässä portissa kulkevasta liikenteestä. Portti määritetään app.listen- funktion ensimmäisellä argumentilla.
@@ -21,35 +22,36 @@ const app = express();
 // Portti, jota ohjelma kuuntelee
 const port = 4000;
 
-// Ohjelmakoodi...
+// Funktio portin kuuntelua varten
 app.listen(port, () => {
     /* 
     Tämä kohta on täysin valinnainen, 
     se kertoo vain kun palvelin käynnistyy
     */
-    console.log(`Server listening on port ${port}`);
+    console.log(`Server listening on port: ${port}`);
 });
 ```
 
 Palvelin käynnistetään `npm start` komennolla.
 
 ## API-rajapinnoista
+
 API eli Application Programming Interface eli ohjelmistorajapinnat ovat palvelimella sijaitsevia ohjelmia, jotka kuuntelevat ja vastaavat käyttäjäsovellusten (client) lähettämiin pyyntöihin.
 
 Yleisimpiä pyyntöjä ovat:
 
-| Pyyntö      | Kuvaus                      |
-| :---------: | :-----------:               |
-| GET         | Resurssien hakemiseen       |
-| POST        | Resurssien luomiseen        |
-| PUT         | Resurssien muokkamiseen     |
-| DELETE      | Resurssien poistamiseen     |
+| Pyyntö |         Kuvaus          |
+| :----: | :---------------------: |
+|  GET   |  Resurssien hakemiseen  |
+|  POST  |  Resurssien luomiseen   |
+|  PUT   | Resurssien muokkamiseen |
+| DELETE | Resurssien poistamiseen |
 
 Kaikki muut pyynnöt kuin GET yleensä vaativat, että niiden mukana lähetetään jotain dataa, yleensä JSON-muodossa.
 
-Tässä esimerkissä käytetään GET- ja POST- pyyntöjä. Palvelimen /api-osoite kuuntelee näitä pyyntöjä, ja lähettää vastauksen. 
+Tässä esimerkissä käytetään GET- ja POST- pyyntöjä. Palvelimen /api-osoite kuuntelee näitä pyyntöjä, ja lähettää vastauksen.
 
-Esimerkki Express-palvelimen GET-"kuuntelijasta": 
+Esimerkki Express-palvelimen GET-"kuuntelijasta":
 
 ```js
 app.get("/api", (req, res) => {
@@ -58,8 +60,8 @@ app.get("/api", (req, res) => {
         description: "Tässä Express.js API-esimerkki.",
     });
 });
-
 ```
+
 > Huomaa että "app"-muuttuja on se sama aiemmin luotu funktioviittaus Expressin pääfunktioon
 
 POST-pyyntö odottaa, että käyttäjä lähettää pyynnössä JSON-objektin, joka sisältää "message"-tietueen. Tämä käyttäjän antama viesti lähetetään sitten takaisin pienen kuvauksen ja lisätietojen kera.
@@ -76,15 +78,16 @@ app.post("/api", (req, res) => {
             error: "Et antanut viestiä!",
         });
     }
-    
+
     res.json({
         description: "Viestisi!",
-        message
+        message,
     });
 });
 ```
 
-Esimerkki palvelimelle lähetettävästä POST-pyynnöstä ja vastauksesta: 
+Esimerkki palvelimelle lähetettävästä POST-pyynnöstä ja vastauksesta:
+
 ```json
 // Pyynnön lisädata eli payload
 

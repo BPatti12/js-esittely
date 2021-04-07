@@ -48,3 +48,18 @@ body {
     color: white;
     background-color: #0098bb;
 }
+
+.messageForm {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 8rem;
+}
+
+.messageForm form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

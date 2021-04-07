@@ -6,11 +6,11 @@ export const Counter = () => {
 
     return (
         <div>
-            <div class="main">
-                <div class="counter">
+            <div className="main">
+                <div className="counter">
                     <h1 id="count">{count}</h1>
                 </div>
-                <CounterButtons count={count} setCount={setCount}/>
+                <CounterButtons count={count} setCount={setCount} />
             </div>
         </div>
     );

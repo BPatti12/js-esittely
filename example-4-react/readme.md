@@ -50,6 +50,7 @@ export default class App extends Component {
 ```
 
 ---
+
 ### [Funktiokomponentti (Function Component)](https://reactjs.org/docs/components-and-props.html)
 
 Funktiokomponentit eroavat luokkakomponenteista monella tapaa (joista lisää vähän [myöhemmin](#hooks)), ja ne ovat aloittelijalle helpompia ymmärtää.
@@ -69,6 +70,7 @@ export default function App() {
 ```
 
 ---
+
 ### Nuolifunktiokomponentti (Arrow Function Component)
 
 Muuten sama kuin normaali funktiokomponentti, mutta alustustapa käyttää uutta ES6-nuolifunktiosyntaksia.
@@ -116,13 +118,7 @@ class Count extends React.Component {
         return (
             <div>
                 <h1>Count: {this.state.count}</h1>
-                <button
-                    onClick={() =>
-                        this.setState({ count: this.state.count + 1 })
-                    }
-                >
-                    +
-                </button>
+                <button onClick={() => this.setState({ count: this.state.count + 1 })}>+</button>
             </div>
         );
     }
@@ -144,46 +140,56 @@ const Count = () => {
     );
 };
 ```
----
-## Props
-Komponenteille vietyjä muuttujia kutsutaan propseiksi. Propseilla voi muuttaa saman komponentin dataa "ulkoa päin". 
 
-Nuolifunktiokomponenteissa propsit saadaan funktion argumenteista seuraavasti: 
+---
+
+## Props
+
+Komponenteille vietyjä muuttujia kutsutaan propseiksi. Propseilla voi muuttaa saman komponentin dataa "ulkoa päin".
+
+Nuolifunktiokomponenteissa propsit saadaan funktion argumenteista seuraavasti:
+
 ```js
 const Welcome = (props) => {
-    <h1>Hei {props.name}!</h1>
-}
+    <h1>Hei {props.name}!</h1>;
+};
 ```
 
 Luokkakomponenteissa propseihin pääsee käsiksi this-muuttujan kautta:
 
-```js  
+```js
 class Welcome extends React.Component {
-  render() {
-    return <h1>Hei, {this.props.name}!</h1>;
-  }
+    render() {
+        return <h1>Hei, {this.props.name}!</h1>;
+    }
 }
 ```
-Komponenttiin viedään propseja määrittämällä arvot komponentin parametreiksi: 
+
+Komponenttiin viedään propseja määrittämällä arvot komponentin parametreiksi:
 
 ```js
-    <Welcome name="Leevi" />
-    // Tämä tulostaa H1-otsikon tekstillä "Hei Leevi!"
+<Welcome name="Leevi" />
+// Tämä tulostaa H1-otsikon tekstillä "Hei Leevi!"
 ```
 
 Komponentit päivittyvät propsien päivittyessä.
 
-Laskuri-esimerkissä laskurin state ja sen asettamisfunkiot annetaan CounterButtons-komponentille propsien kautta, jotta painikkeet voisivat muuttaa Counter-komponentin statea. 
+Laskuri-esimerkissä laskurin state ja sen asettamisfunkiot annetaan CounterButtons-komponentille propsien kautta, jotta painikkeet voisivat muuttaa Counter-komponentin statea.
 
 ---
+
 ## Reactsivusto verkkoon
+
 Reactilla tehty sivu täytyy kompiloida normaaliksi HTML- ja JavaScript-koodiksi ennen kun sen saa julkisesti verkkoon.
 
-Kompilointi onnistuu `npm start build` tai `yarn build` komennoilla. 
+Kompilointi onnistuu `npm start build` tai `yarn build` komennoilla.
 
 Komento luo projektin juurihakemistoon build-kansion, jonka sisältö on valmis staatinen verkkosivu, joka voidaan siirtää verkkopalvelimelle ja jakaa sieltä.
 
 ---
+
 ## Muuta
+
 ## React Native
-React Native on Reactin pohjalta luotu kehys mobiilisovelluskehitystä varten. 
+
+React Native on Reactin pohjalta luotu kehys mobiilisovelluskehitystä varten.
